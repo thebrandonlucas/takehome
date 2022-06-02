@@ -27,4 +27,4 @@ describe('Deck', () => {
     const top5Original = originalDeck.slice(-5);
     expect(getTop5Cards(deck)).toEqual(top5Original);
   });
-})
+});
