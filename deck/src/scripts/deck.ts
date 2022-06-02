@@ -1,4 +1,4 @@
-type Rank = 2|3|4|5|6|7|8|9|10|'J'|'Q'|'K'|'A'
+type Rank = '2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'10'|'J'|'Q'|'K'|'A'
 type Suit = '♦' | '♣' | '♥' | '♠'
 
 export type Card = {
@@ -9,7 +9,7 @@ export type Card = {
 // TODO: JSDoc for functions
 
 export function makeDeck(): Card[] {
-  const ranks: Rank[] = [2,3,4,5,6,7,8,9,10,'J','Q','K','A'];
+  const ranks: Rank[] = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
   const suits: Suit[] = ['♦', '♣', '♥', '♠'];
   const deck: Card[] = [];
   // Generate deck
