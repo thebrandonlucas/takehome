@@ -40,12 +40,11 @@ function shuffle(deck: Card[]) {
   }
 }
 
-function top5() {
-
+// Deck treated as "stack": top card is last index
+function top5(deck: Card[]) {
+  return deck.slice(-5);
 }
 
 const deck: Card[] = makeDeck()
 
 shuffle(deck)
-
-console.log(deck);

@@ -1,3 +1,4 @@
+// TODO: JSDoc for functions
 function makeDeck() {
     var ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
     var suits = ['♦', '♣', '♥', '♠'];
@@ -29,6 +30,11 @@ function shuffle(deck) {
         deck[randomIndex] = temp;
     }
 }
+// Deck treated as "stack": top card is last index
+function top5(deck) {
+    return deck.slice(-5);
+}
 var deck = makeDeck();
 shuffle(deck);
 console.log(deck);
+console.log(top5(deck));
