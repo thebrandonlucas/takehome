@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Card } from '../scripts/deck';
+	import Card from '../components/card.svelte';
 
 	import { onMount } from 'svelte';
 
@@ -22,13 +23,15 @@
 </script>
 
 <div />
-{#if cards}
-	{#each cards as card}
-		<div>
-			<p>{card.rank}</p>
-			<p>{card.suit}</p>
-		</div>
-	{/each}
-{:else}
-	<p>Loading...</p>
-{/if}
+
+<h1 class="text-4xl">Cards!</h1>
+
+<div class="flex flex-col justify-around my-5 md:flex-row">
+	{#if cards}
+		{#each cards as card}
+			<Card {card} />
+		{/each}
+	{:else}
+		<p>Loading...</p>
+	{/if}
+</div>
