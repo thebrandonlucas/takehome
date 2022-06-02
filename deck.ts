@@ -1,14 +1,14 @@
 type Rank = 2|3|4|5|6|7|8|9|10|'J'|'Q'|'K'|'A'
 type Suit = '♦' | '♣' | '♥' | '♠'
 
-type Card = {
+export type Card = {
   rank: Rank;
   suit: Suit;
 }
 
 // TODO: JSDoc for functions
 
-function makeDeck(): Card[] {
+export function makeDeck(): Card[] {
   const ranks: Rank[] = [2,3,4,5,6,7,8,9,10,'J','Q','K','A'];
   const suits: Suit[] = ['♦', '♣', '♥', '♠'];
   let deck: Card[] = [];
@@ -31,9 +31,9 @@ function randomIntInRange(min: number, max: number) {
 }
 
 // Fisher-Yates Shuffle: https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
-function shuffle(deck: Card[]) {
-  for (let i = deck.length - 1; i > 0; i--) {
-    const randomIndex = randomIntInRange(0, i);
+export function shuffle(deck: Card[]) {
+  for (let i = 0; i < deck.length - 2; i++) {
+    const randomIndex = randomIntInRange(i, 51);
     const temp = deck[i];
     deck[i] = deck[randomIndex];
     deck[randomIndex] = temp;
@@ -41,10 +41,10 @@ function shuffle(deck: Card[]) {
 }
 
 // Deck treated as "stack": top card is last index
-function top5(deck: Card[]) {
+export function getTop5Cards(deck: Card[]) {
   return deck.slice(-5);
 }
 
-const deck: Card[] = makeDeck()
+// const deck: Card[] = makeDeck()
 
-shuffle(deck)
+// shuffle(deck)
